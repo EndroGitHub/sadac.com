@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script>
+      function slidebar() {
+        if (document.getElementById("slide-bar").style.opacity == 0) {
+          document.getElementById("slide-bar").style.opacity = 1;
+          document.getElementById("slide-bar").style.zIndex = 1;
+          document.getElementById("link").style.pointerEvents = "all";
+          document.getElementById("link1").style.pointerEvents = "all";
+          document.getElementById("link2").style.pointerEvents = "all";
+        } else {
+          document.getElementById("slide-bar").style.opacity = 0;
+          document.getElementById("slide-bar").style.zIndex = 0;
+          document.getElementById("link").style.pointerEvents = "none";
+          document.getElementById("link1").style.pointerEvents = "none";
+          document.getElementById("link2").style.pointerEvents = "none";
+        }
+      }
+      function show() {
+        document.getElementById("label").innerHTML = 'File Uploaded';
+      }
+    </script>
+    <style>
+      .getDetails-form {
+        position: absolute;
+        height: 60%;
+        width: 60%;
+        top: 25%;
+        left: 20%;
+        background-color: rgb(42, 46, 62);
+        justify-content: center;
+        border: 2px solid rgb(67, 74, 93);
+        border-radius: 12px;
+      }
+      .getDetails-form input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+      .getDetails-form label {
+        font-size: 30px;
+        font-weight: bold;
+        font-family: sans-serif;
+        border: 2px solid rgb(67, 74, 93);
+        background-color: rgb(52, 54, 63);
+        color: white;
+        width: 80%;
+        position: absolute;
+        top: 10%;
+        left: 9%;
+        user-select: none;
+        padding: 10% 1%;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      .getDetails-form button
+      {
+        position: absolute;
+        width: 30%;
+        top: 70%;
+        left: 35%;
+        background-color: rgb(52, 54, 63);
+        color: rgb(0, 136, 209);
+        border: 2px solid rgb(67, 74, 93);
+        font-size: 30px;
+        padding: 12px 12px;
+        font-weight: bold;
+        font-family: sans-serif;
+        user-select: none;
+        border-radius: 5px;
+      }
+      #upload-icon {
+        color: white;
+      }
+      #space
+      {
+        color: rgb(52, 54, 63);
+      }
+      @media(max-width: 480px)
+      {
+        .getDetails-form
+        {
+          width: 90%;
+          left: 5%;
+          top: 20%;
+        }
+        .getDetails-form label
+        {
+          font-size: 25px;
+          height: 50%;
+          width: 90%;
+          left: 3.5%;
+          align-items: center;
+          top: 5%;
+        }
+        .getDetails-form button
+        {
+          font-size: 20px;
+          top: 78%;
+          width: 40%;
+          left: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body class="body">
+    <nav class="nav-bar">
+      <a href="index.html"><i id="icon" class="fa fa-home"></i></a>
+      <i class="logo" id="icon">SADAC</i>
+      <i onclick="slidebar()" id="icon" class="fa fa-bars"></i>
+    </nav>
+    <div id="slide-bar" class="slide-bar">
+      <a id="link" href="#"><header>Your Account</header></a>
+      <a id="link1" href="#"><header>About Us</header></a>
+      <a id="link2" href="#"><header>Log Out</header></a>
+    </div>
+    <form action="showDetails.html" class="getDetails-form">
+      <input onchange="show()" id="file-upload" type="file" required/>
+      <label id="label" for="file-upload"><i id="upload-icon" class="fa fa-upload"></i><i id="space"> h</i>Upload Image</label>
+      <button>SUBMIT</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script>
+      function slidebar() {
+        if (document.getElementById("slide-bar").style.opacity == 0) {
+          document.getElementById("slide-bar").style.opacity = 1;
+          document.getElementById("slide-bar").style.zIndex = 1;
+          document.getElementById("link").style.pointerEvents = "all";
+          document.getElementById("link1").style.pointerEvents = "all";
+          document.getElementById("link2").style.pointerEvents = "all";
+        } else {
+          document.getElementById("slide-bar").style.opacity = 0;
+          document.getElementById("slide-bar").style.zIndex = 0;
+          document.getElementById("link").style.pointerEvents = "none";
+          document.getElementById("link1").style.pointerEvents = "none";
+          document.getElementById("link2").style.pointerEvents = "none";
+        }
+      }
+    </script>
+    <style>
+      .showDetails-h1 {
+        position: absolute;
+        color: white;
+        width: 90%;
+        left: 5%;
+        text-align: center;
+        font-weight: bold;
+        font-family: sans-serif;
+        font-size: 40px;
+        top: 20%;
+        user-select: none;
+      }
+      .showDetails-div {
+        user-select: none;
+        position: absolute;
+        background-color: rgb(42, 46, 62);
+        border: 2px solid rgb(67, 74, 93);
+        border-radius: 12px;
+        width: 90%;
+        left: 5%;
+        top: 31%;
+        display: flex;
+      }
+      .showDetails-div section p {
+        font-size: 30px;
+        font-family: sans-serif;
+        font-weight: bold;
+        color: white;
+      }
+      .showDetails-sec1 {
+        position: relative;
+        width: 48%;
+      }
+      .showDetails-sec2 {
+        position: relative;
+        width: 40%;
+        left: 2%;
+      }
+      .showDetails-sec1 p {
+        position: relative;
+        width: 100%;
+        text-align: right;
+      }
+      @media(max-width: 480px)
+      {
+        .showDetails-h1
+        {
+            font-size: 25px;
+        }
+        .showDetails-div section p
+        {
+            font-size: 10px;
+        }
+        .showDetails-sec1
+        {
+          width: 30%;
+        }
+        .showDetails-sec2
+        {
+            left: 5%;
+        }
+      }
+    </style>
+  </head>
+  <body class="body">
+    <nav class="nav-bar">
+      <a href="index.html"><i id="icon" class="fa fa-home"></i></a>
+      <i class="logo" id="icon">SADAC</i>
+      <i onclick="slidebar()" id="icon" class="fa fa-bars"></i>
+    </nav>
+    <div id="slide-bar" class="slide-bar">
+      <a id="link" href="#"><header>Your Account</header></a>
+      <a id="link1" href="#"><header>About Us</header></a>
+      <a id="link2" href="#"><header>Log Out</header></a>
+    </div>
+    <h1 class="showDetails-h1">VEHICLE DETAILS</h1>
+    <div class="showDetails-div">
+      <section class="showDetails-sec1">
+        <p>Plate Number:</p>
+        <p>Name:</p>
+        <p>Phone Number:</p>
+        <p>Address:</p>
+      </section>
+      <section class="showDetails-sec2">
+        <p>HR26DK8337</p>
+        <p>Manmohan Reddy</p>
+        <p>9768559016</p>
+        <p>#008, 2nd Floor, Basanth Village, KR Puram, Bangalore, Karnataka</p>
+      </section>
+    </div>
+  </body>
+</html>
